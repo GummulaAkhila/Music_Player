@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Melody Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="music-player">
+
+        <!-- LEFT SIDE -->
+        <div class="player-left">
+
+            <div class="top-bar">
+
+                <div>
+                    <span class="music-icon">♪</span>
+                    <span>Now Playing</span>
+                </div>
+
+                <button id="favoriteBtn">♡</button>
+
+            </div>
+
+
+            <!-- Album -->
+            <div class="album-container">
+
+                <div class="album-ring">
+
+                    <img
+                        id="albumImage"
+                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=80"
+                        alt="Album Cover"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Song Details -->
+            <div class="song-details">
+
+                <h1 id="songTitle">
+                    Summer Vibes
+                </h1>
+
+                <p id="songArtist">
+                    Melody Artist
+                </p>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="progress-area">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progressBar"
+                    value="0"
+                    min="0"
+                    max="100"
+                >
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+
+            <!-- Controls -->
+            <div class="controls">
+
+                <button id="shuffleBtn">
+                    🔀
+                </button>
+
+                <button id="prevBtn">
+                    ⏮
+                </button>
+
+                <button id="playBtn" class="play-btn">
+                    ▶
+                </button>
+
+                <button id="nextBtn">
+                    ⏭
+                </button>
+
+                <button id="repeatBtn">
+                    🔁
+                </button>
+
+            </div>
+
+
+            <!-- Volume -->
+            <div class="volume-area">
+
+                <span>🔈</span>
+
+                <input
+                    type="range"
+                    id="volumeBar"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                >
+
+                <span>🔊</span>
+
+            </div>
+
+
+            <!-- Autoplay -->
+            <div class="autoplay">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="autoplay"
+                        checked
+                    >
+
+                    Autoplay next song
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE - PLAYLIST -->
+        <div class="playlist-section">
+
+            <div class="playlist-header">
+
+                <div>
+
+                    <p>YOUR MUSIC</p>
+
+                    <h2>Playlist</h2>
+
+                </div>
+
+                <span id="songCount">
+                    4 Songs
+                </span>
+
+            </div>
+
+
+            <div class="playlist" id="playlist">
+
+                <!-- Song 1 -->
+                <div class="playlist-song active"
+                     data-index="0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=200&q=80"
+                        alt=""
+                    >
+
+                    <div class="song-info">
+
+                        <h3>Summer Vibes</h3>
+
+                        <p>Melody Artist</p>
+
+                    </div>
+
+                    <span class="song-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <!-- Song 2 -->
+                <div class="playlist-song"
+                     data-index="1">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=200&q=80"
+                        alt=""
+                    >
+
+                    <div class="song-info">
+
+                        <h3>Midnight Dreams</h3>
+
+                        <p>Luna Sky</p>
+
+                    </div>
+
+                    <span class="song-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <!-- Song 3 -->
+                <div class="playlist-song"
+                     data-index="2">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=200&q=80"
+                        alt=""
+                    >
+
+                    <div class="song-info">
+
+                        <h3>Lost In Music</h3>
+
+                        <p>Neon Beats</p>
+
+                    </div>
+
+                    <span class="song-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <!-- Song 4 -->
+                <div class="playlist-song"
+                     data-index="3">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=200&q=80"
+                        alt=""
+                    >
+
+                    <div class="song-info">
+
+                        <h3>Ocean Lights</h3>
+
+                        <p>Dream Waves</p>
+
+                    </div>
+
+                    <span class="song-number">
+                        04
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Audio -->
+    <audio id="audio"></audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
